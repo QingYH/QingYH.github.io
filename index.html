@@ -90,14 +90,18 @@
             border: 1px solid #b7daf9;
         }
 
+         /* 关键修复：头像完整显示，不被边框裁剪 */
         .profile-image {
-            width: 160px;
-            height: 160px;
-            border-radius: 10%;
-            object-fit: cover;
-            border: 2px solid #ffffff;
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;        /* 保证图片覆盖整个区域但不变形 */
+            object-position: center;  /* 居中显示，确保头部在中间 */
+            border: 5px solid #ffffff;
             box-shadow: 0 8px 20px rgba(60, 140, 210, 0.18);
             margin: 0 auto 10px;
+            display: block;           /* 确保margin auto生效 */
+            background-color: #e6f2ff; /* 加载时的背景色 */
         }
 
         /* 导航链接 */
